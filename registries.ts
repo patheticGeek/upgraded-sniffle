@@ -2,10 +2,11 @@ import type { Client } from "@open-wa/wa-automate"
 import { Command, Commands } from "./types"
 import { sync } from "glob"
 import { resolve } from "path"
+import env from "./env"
 
 export async function registerCommands(client: Client) {
   const commands: Commands = {}
-  let helpText = "⚠ Bot help\n\n"
+  let helpText = "⚠ Bot help ⚠\n\n"
 
   const commandFiles = sync(resolve("./commands/*"))
 
@@ -24,7 +25,8 @@ export async function registerCommands(client: Client) {
     } catch (err) {}
   })
 
-  helpText += `Made by patheticGeek\n(https://github.com/patheticGeek)`
+  helpText += `Made by ${env.AUTHOR}\n`
+  if (env.AUTHOR_URL) helpText += `(${env.AUTHOR_URL})`
 
   return { commands, helpText }
 }
