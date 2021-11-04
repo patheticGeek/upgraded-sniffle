@@ -3,6 +3,7 @@ import type { Client, Message } from '@open-wa/wa-automate'
 import { registerCommands } from './registries'
 import { Commands } from './types'
 import { PREFIX } from './consts'
+import env from './env'
 
 async function handleMessage(client: Client, message: Message, commands: Commands, helpText: string) {
   if(!message.body || !message.body.startsWith(PREFIX)) return
@@ -26,6 +27,7 @@ async function main() {
   const client = await create({
     headless: true,
     qrTimeout: 0, // 0 means it will wait forever for you to scan the qr code
+    popup: env.PORT
   })
 
   const { commands, helpText } = await registerCommands(client)
