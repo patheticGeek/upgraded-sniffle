@@ -33,7 +33,11 @@ async function main() {
   const { commands, helpText } = await registerCommands(client)
   console.log('Commands registered:', Object.keys(commands))
 
-  client.onMessage(message => handleMessage(client, message, commands, helpText))
+  if (env.REPLY_TO_ANY) {
+    client.onAnyMessage(message => handleMessage(client, message, commands, helpText))
+  } else {
+    client.onMessage(message => handleMessage(client, message, commands, helpText))
+  }
 }
 
 main().catch((err) => console.error(err))
