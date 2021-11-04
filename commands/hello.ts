@@ -10,7 +10,7 @@ class HelloCommand extends Command {
     })
   }
 
-  exec = async (message: Message) => {
+  exec = async (_: string, message: Message) => {
     await this.client.reply(message.chatId, 'Hello there 👋', message.id)
   }
 }

@@ -19,7 +19,7 @@ export abstract class Command {
     this.aliases = options?.aliases || []
   }
 
-  public abstract exec(message: Message): unknown | Promise<unknown>;
+  public abstract exec(messageText: string, message: Message): unknown | Promise<unknown>;
 }
 
 export class Event {
