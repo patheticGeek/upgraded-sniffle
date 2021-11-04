@@ -20,7 +20,7 @@ class HelloCommand extends Command {
       aliases: ["s"],
       name: "sticker",
       description:
-        "Reply to or caption a image/video/gig message to make a sticker of it",
+        "Reply to or caption a image/video/gif message to make a sticker of it",
     })
   }
 
