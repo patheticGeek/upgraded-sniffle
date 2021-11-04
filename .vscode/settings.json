@@ -1,6 +1,6 @@
 {
-  "cSpell.words": [
-    "consts"
-  ],
-  "git.ignoreLimitWarning": true
+  "cSpell.words": ["consts", "Stickerfrom"],
+  "git.ignoreLimitWarning": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.semi": false
 }

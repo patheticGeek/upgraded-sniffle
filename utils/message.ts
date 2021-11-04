@@ -1,7 +1,7 @@
-import { Message, MessageTypes } from '@open-wa/wa-automate'
+import { Message, MessageTypes } from "@open-wa/wa-automate"
 
 export function getMessageText(message: Message) {
-  switch(message.type) {
+  switch (message.type) {
     case MessageTypes.TEXT:
       return message.body
     case MessageTypes.IMAGE:
