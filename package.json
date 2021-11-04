@@ -5,7 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node index.ts"
+    "dev": "ts-node index.ts",
+    "start": "cd build && node index.js"
   },
   "keywords": [
     "whatsapp",
@@ -17,7 +18,7 @@
   "license": "ISC",
   "nodemon": {
     "ext": "ts",
-    "exec": "yarn start"
+    "exec": "yarn dev"
   },
   "dependencies": {
     "@open-wa/wa-automate": "^4.23.7",
